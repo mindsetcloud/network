@@ -74,3 +74,9 @@ R1(config)#exit
 R1# show login
 R1# show login failures
 ```
+## mudar algoritmo de encriptação
+
+R1(config)# enable algorithm-type ?
+R1(config)# enable algorithm-type scrypt secret cisco12345
+R1(config)# username Bob algorithm-type scrypt secret cisco54321
+ 
