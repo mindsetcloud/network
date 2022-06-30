@@ -58,6 +58,7 @@ ipconfig show ip interface brief
 ```
 ## aprimorar o login
 ```sh
+R1# configure terminal
 R1(config)# login block-for 15 attempts 5 within 60 
 R1(config)# ip access-list standard PERMIT-ADMIN
 R1(config-std-nacl)# remark Permit only Administrative hosts     
