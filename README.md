@@ -75,8 +75,11 @@ R1# show login
 R1# show login failures
 ```
 ## mudar algoritmo de encriptação
-
+```sh
+R1(config)# ip domain-name name.com
+R1(config)# no ip domain-lookup
 R1(config)# enable algorithm-type ?
 R1(config)# enable algorithm-type scrypt secret cisco12345
 R1(config)# username Bob algorithm-type scrypt secret cisco54321
- 
+R1(config)# crypto key generate rsa
+```
