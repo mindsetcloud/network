@@ -56,5 +56,20 @@ Sw-Floor-1(config)# ip default-gateway 192.168.1.1
 ```sh
 ipconfig show ip interface brief
 ```
-
-
+## aprimorar o login
+```sh
+R1(config)# login block-for 15 attempts 5 within 60 
+R1(config)# ip access-list standard PERMIT-ADMIN
+R1(config-std-nacl)# remark Permit only Administrative hosts     
+R1(config-std-nacl)# permit 192.168.10.10
+R1(config-std-nacl)# permit 192.168.11.10 
+R1(config-std-nacl)# exit 
+R1(config)# login quiet-mode access-class PERMIT-ADMIN   
+R1(config)# login delay 10  
+R1(config)# login on-success log  
+R1(config)# login on-failure log
+R1(config)# security authentication failure rate threshold-rate log  
+R1(config)#exit
+R1# show login
+R1# show login failures
+```
